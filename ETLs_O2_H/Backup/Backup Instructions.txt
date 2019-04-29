@@ -1,0 +1,13 @@
+If the input dataset needs to be recreated:
+
+Open Generate Dataset Folder, Inside there is a Dataiku Project and the original 3 datasets from Enigma
+Option 1) Import Dataiku Project, Build Recursively the last dataset in the flow and export that into the input folder
+Option 2) Import Dataiku Project, upload the 3 datasets (H2A2015,...) then change the input dataset in the first 3 recipes in the Dataiku flow. Build recursively the last dataset and export that into the Input folder.
+
+If Dataiku is not available or the cleaned dataset cannot be generated:
+Inside the InputOutput folder there are 2 files, the file with the longer name goes in the Input folder and it's used by the TR_DATA_PREP.ktr kettle file. If for some reason the cleaned version is needed for the ETLs, the shorter named file in the InputOutput folder can be put in the Output folder
+
+If Pentaho doesn't run (because Java sucks):
+
+The Database folder includes scripts to generate and populate all tables. There is also a query called h2achecktableseuquery.sql that is simply a SELECT query that joins all table to check the relationships.
+
